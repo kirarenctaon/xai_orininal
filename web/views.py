@@ -98,7 +98,7 @@ class LecturevideoVideoList(ListView):
 
 class DemoresourceImageList(ListView):
     model = DemoResource
-    template_name = 'web/preparing.html'
+    template_name = 'web/demoresource.html'
 
     def get_context_data(self, **kwargs):
         context = super(DemoresourceImageList, self).get_context_data(**kwargs)
