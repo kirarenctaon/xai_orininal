@@ -170,7 +170,7 @@ class CommunityBoard(ListView):
     def get_context_data(self, **kwargs):
         context = super(CommunityBoard, self).get_context_data(**kwargs)
         context['object_name'] = 'community_list'
-	context['subMenuDict'] = getSubMenuDict()
+        context['subMenuDict'] = getSubMenuDict()
         return context
 
 class CommunityDetail(DetailView):
