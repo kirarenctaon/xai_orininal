@@ -958,7 +958,7 @@ ul.team-detail li ul.social-network li i {
 }
 
 .pricing-content strong{
-	color:#353535;
+color:#353535;
 }
 
 .pricing-content ul{
@@ -1610,11 +1610,6 @@ section.demogrid .col-lg-1,section.demogrid .col-lg-2,section.demogrid .col-lg-3
 	padding:20px 0 20px;
 }
 
-.col-lg-4 {
-	width:700px;
-}
-
-
 section.demogrid .show-grid .row,section.demogrid .show-grid .row-fluid {
 	margin-bottom:0;
 }
@@ -1796,6 +1791,7 @@ article img.pull-right, article .align-right{
 .margintop40{
 	margin-top:40px;
 }
+
 
 /* =============================
 21. Media queries 
@@ -1992,45 +1988,9 @@ article img.pull-right, article .align-right{
 @media (max-width: 360px) {
 
 }
-
 /* =============================
-Cumtomized Style : table
+22. Customize
 ============================= */
-.Table
-{
-    display: table;
-    color: black;
-}
-.Title
-{
-    display: table-caption;
-    color: black;
-    text-align: center;
-    font-weight: bold;
-    font-size: larger;
-}
-.Heading
-{
-    display: table-row;
-    color: black;
-    font-weight: bold;
-    text-align: center;
-}
-.Row
-{
-    display: table-row;
-    color: black;
-}
-.Cell
-{
-    display: table-cell;
-    color: black;
-    border: solid;
-    border-width: thin;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
 .wrap {
     width: 320px;
     height: 192px;
@@ -2046,7 +2006,7 @@ Cumtomized Style : table
     -o-transform: scale(0.25);
     -webkit-transform: scale(0.25);
     transform: scale(0.25);
-
+    
     -ms-transform-origin: 0 0;
     -moz-transform-origin: 0 0;
     -o-transform-origin: 0 0;
