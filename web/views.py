@@ -8,7 +8,7 @@ from django.views.generic import ListView, DetailView
 
 from django.core.paginator import Paginator
 
-from .forms import NewsForm, CommunityForm
+from .forms import NewsForm, CommunityForm, DemoForm
 # Create your views here.
 
 def index(request):
@@ -107,7 +107,7 @@ class DemoresourceImageList(ListView):
 
 class PublicationTextList(ListView):
     model = Publication
-    template_name = 'web/preparing.html'
+    template_name = 'web/publication.html'
 
     def get_context_data(self, **kwargs):
         context = super(PublicationTextList, self).get_context_data(**kwargs)
@@ -192,7 +192,7 @@ class NewsDetail(DetailView):
         return context
 
 def githubRedirect(request):
-    return redirect('http://sail.unist.ac.kr')
+    return redirect('http://github.com')
 
 def Contact(request):
     topMenus = TopMenu.objects.all()
@@ -237,7 +237,7 @@ def news_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'web/news_edit.html', {'form': form})
 
-#News Community
+#Community
 def community_new(request):
     topMenus = TopMenu.objects.all()
     subMenuDict = dict()
@@ -271,3 +271,38 @@ def community_edit(request, pk):
     elif request.method == "GET":
         form = CommunityForm(instance=post)
     return render(request, 'web/community_edit.html', {'form': form})
+
+#demoresource
+def demoresource_new(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+
+    if request.method == "POST":
+        form = DemoForm(request.POST)
+        if form.is_valid():
+            news = form.save(commit=False)
+            news.writer = request.user
+            news.date = timezone.now()
+            news.save()
+            return redirect('demoresource_detail', pk=news.pk)
+    elif request.method == "GET":
+        form = DemoForm()
+
+    return render(request, 'web/demoresource_edit.html', {'form':form}, {'subMenuDict':getSubMenuDict()})
+
+def demoresource_edit(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = DemoForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('demoresource_detail', pk=post.pk)
+    elif request.method == "GET":
+        form = DemoForm(instance=post)
+    return render(request, 'web/demoresource_edit.html', {'form': form})
