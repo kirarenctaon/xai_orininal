@@ -31,6 +31,9 @@ class TopMenu(models.Model):
     titleko = models.CharField(max_length=100)
     titleen = models.CharField(max_length=100)
 
+    class meta:
+        ordering = ['titleen']
+
     def __str__(self):
         return self.titleen
 
