@@ -35,7 +35,7 @@ class TopMenu(models.Model):
 class SubMenu(models.Model):
     titleko = models.CharField(max_length=100)
     titleen = models.CharField(max_length=100)
-    topmenu_id = models.ForeignKey(TopMenu)
+    topmenu_id = models.ForeignKey('TopMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -49,7 +49,7 @@ class Greeting(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -66,7 +66,7 @@ class Member(models.Model):
     careerko = models.TextField()
     careeren = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
     # IMAGE UPLOAD
     testImage = models.ImageField(upload_to="member", default='noImage')
 
@@ -81,7 +81,7 @@ class Lab(models.Model):
     careerko = models.TextField()
     careeren = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -94,7 +94,7 @@ class Project(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -108,7 +108,7 @@ class LectureNote(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -121,7 +121,7 @@ class LectureVideo(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     link = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -134,7 +134,7 @@ class DemoResource(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -147,7 +147,7 @@ class Publication(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -160,7 +160,7 @@ class Patent(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -173,7 +173,7 @@ class Report(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -187,7 +187,7 @@ class Notice(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -200,7 +200,7 @@ class News(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -213,7 +213,7 @@ class Gallery(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
@@ -226,7 +226,7 @@ class Community(models.Model):
     contentko = models.TextField()
     contenten = models.TextField()
     image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey(SubMenu)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titleen
