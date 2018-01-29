@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
 from django.utils import timezone
 
-from .models import TopMenu, SubMenu, Greeting, Member, Lab, Project, LectureNote, LectureVideo, DemoResource, Publication, Patent, Report, Notice, News, Gallery, Community
+from .models import TopMenu, SubMenu, Greeting, Member, Lab, Project, LectureNote, LectureVideo, DemoResource, Publication, Patent, Report, Notice, News, Gallery, Community, RelatedProject, Github
 
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView, DetailView
@@ -67,7 +67,6 @@ class LabTextList(ListView):
         context['subMenuDict'] = getSubMenuDict()
         return context
 
-
 class ProjectPage(TemplateView):
     model = Project
     template_name = 'web/projectTemp.html'
@@ -94,7 +93,6 @@ class LecturevideoVideoList(ListView):
         context = super(LecturevideoVideoList, self).get_context_data(**kwargs)
         context['subMenuDict'] = getSubMenuDict()
         return context
-
 
 class DemoresourceImageList(ListView):
     model = DemoResource
@@ -191,14 +189,40 @@ class NewsDetail(DetailView):
         context['subMenuDict'] = getSubMenuDict()
         return context
 
-def githubRedirect(request):
-    #return redirect('http://github.com')
+#OPEN SOURCE
+class GithubTextlist(ListView):
+    model = Github
+    template_name = 'web/github.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(GithubTextlist, self).get_context_data(**kwargs)
+        context['subMenuDict'] = getSubMenuDict()
+        return context
+
+class RelatedProject(ListView):
+    model = RelatedProject
+    template_name = 'web/relatedproject.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(RelatedProject, self).get_context_data(**kwargs)
+        context['subMenuDict'] = getSubMenuDict()
+        return context
+
+def RelatedProject2(request):
     topMenus = TopMenu.objects.all()
     subMenuDict = dict()
     for topMenu in topMenus:
         subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
         subMenuDict[topMenu.titleen] = subMenus
-    return render(request, 'web/github.html', {'subMenuDict':getSubMenuDict()})
+    return render(request, 'web/relatedproject_2.html', {'subMenuDict':getSubMenuDict()})
+
+def RelatedProject3(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+    return render(request, 'web/relatedproject_3.html', {'subMenuDict':getSubMenuDict()})    
 
 def Contact(request):
     topMenus = TopMenu.objects.all()
@@ -262,7 +286,7 @@ def community_new(request):
     elif request.method == "GET":
         form = CommunityForm()
 
-    return render(request, 'web/community_edit.html', {'form':form}, {'subMenuDict':getSubMenuDict()})
+    return render(request, 'web/community_edit.html',{'subMenuDict':getSubMenuDict()})
 
 def community_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)

@@ -11,7 +11,6 @@ from django.db import models
 #     - Lab(list)
 #     - Project(page)
 # - Research
-#     - Github(link)
 #     - LectureNote(imagelist,video)
 #     - LectureVideo(imagelist)
 #     - DemoResource(imagelist)
@@ -23,6 +22,9 @@ from django.db import models
 #     - News(imagelist)
 #     - Gallery(imagelist)
 #     - Community(board)
+# - OPEN SOURCE
+#     - Github(textlist)
+#     - Related Project(imagelist)
 # - Contact(page)
 
 class TopMenu(models.Model):
@@ -219,6 +221,32 @@ class Gallery(models.Model):
         return self.titleen
 
 class Community(models.Model):
+    titleko = models.CharField(max_length=100)
+    titleen = models.CharField(max_length=100)
+    writer = models.CharField(max_length=45)
+    date = models.DateField()
+    contentko = models.TextField()
+    contenten = models.TextField()
+    image = models.CharField(max_length=100)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.titleen
+
+class Github(models.Model):
+    titleko = models.CharField(max_length=100)
+    titleen = models.CharField(max_length=100)
+    writer = models.CharField(max_length=45)
+    date = models.DateField()
+    contentko = models.TextField()
+    contenten = models.TextField()
+    image = models.CharField(max_length=100)
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.titleen
+
+class RelatedProject(models.Model):
     titleko = models.CharField(max_length=100)
     titleen = models.CharField(max_length=100)
     writer = models.CharField(max_length=45)
