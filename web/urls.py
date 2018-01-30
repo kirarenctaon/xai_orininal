@@ -27,8 +27,8 @@ urlpatterns = [
     url(r'^research/report/$', views.ReportTextList.as_view(), name='report'),
 
 
-    url(r'^research/demoresource/amorepacific$', views.Amorepacific, name='amorepacific'),
-    url(r'^research/demoresource/hyundaiMobis$', views.HyundaiMobis, name='hyundaiMobis'),
+    url(r'^research/demoresource/amorepacific$', views.amorepacific, name='amorepacific'),
+    url(r'^research/demoresource/hyundaimobis$', views.hyundaimobis, name='hyundaimobis'),
     url(r'^research/demoresource/hyundaimotor$', views.hyundaimotor, name='hyundaimotor'),
     url(r'^research/demoresource/koreaelectric$', views.koreaelectric, name='koreaelectric'),
     url(r'^research/demoresource/lgchem$', views.lgchem, name='lgchem'),
