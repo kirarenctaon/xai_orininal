@@ -230,7 +230,7 @@ def Amorepacific(request):
     for topMenu in topMenus:
         subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
         subMenuDict[topMenu.titleen] = subMenus
-    return render(request, 'web/Amorepacific.html', {'subMenuDict':getSubMenuDict()})
+    return render(request, 'web/amorepacific.html', {'subMenuDict':getSubMenuDict()})
 
 def HyundaiMobis(request):
     topMenus = TopMenu.objects.all()
@@ -238,7 +238,7 @@ def HyundaiMobis(request):
     for topMenu in topMenus:
         subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
         subMenuDict[topMenu.titleen] = subMenus
-    return render(request, 'web/HyundaiMobis.html', {'subMenuDict':getSubMenuDict()})
+    return render(request, 'web/hyundaiMobis.html', {'subMenuDict':getSubMenuDict()})
 
 def Contact(request):
     topMenus = TopMenu.objects.all()
