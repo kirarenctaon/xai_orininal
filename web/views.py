@@ -224,6 +224,22 @@ def RelatedProject3(request):
         subMenuDict[topMenu.titleen] = subMenus
     return render(request, 'web/relatedproject_3.html', {'subMenuDict':getSubMenuDict()})    
 
+def Amorepacific(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+    return render(request, 'web/Amorepacific.html', {'subMenuDict':getSubMenuDict()})
+
+def HyundaiMobis(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+    return render(request, 'web/HyundaiMobis.html', {'subMenuDict':getSubMenuDict()})
+
 def Contact(request):
     topMenus = TopMenu.objects.all()
     subMenuDict = dict()

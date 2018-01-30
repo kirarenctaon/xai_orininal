@@ -6,12 +6,15 @@
             <div class="col-lg-12">
                 <ul class="breadcrumb">
                     <li><a href="{% url 'contact' %}"><i class="fa fa-home"></i></a><i class="icon-angle-right"></i></li>
-                    <li class="active">DemoResource</li>
+                    <li class="active">Demo Resource</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
+
+
+
 <section id="content">
     <div class="container">
         <table class="table table-bordered">
@@ -24,17 +27,28 @@
             </tr>
           </thead>
           <tbody>
-            {% for demoresource in demoresource_list %}
+<!--             {% for demoresource in demoresource_list %}
               <tr>
                   <td>{{ demoresource.id }}</td>
                   <td><a href="{% url 'community_detail' pk=community.id%}">{{ demoresource.titleen }}</a></td>
                   <td>{{ demoresource.writer }}</td>
                   <td>{{ demoresource.date }}</td>
               </tr>
-            {% endfor %}
+            {% endfor %} -->
+              <tr>
+                  <td>1</td>
+                  <td><a href="{% url 'Amorepacific' %}">[특징주] 아모레퍼시픽, 전일 대비 약 0.16% 하락한 30만 9500원 </a></td>
+                  <td>설명가능인공지능</td>
+                  <td>2018-01-26</td>
+              </tr>
+              <tr>
+                  <td>2</td>
+                  <td><a href="{% url 'HyundaiMobis' %}">[특징주]현대모비스, 전일 대비 약 7.28% 하락한 24만 8500원 </a></td>
+                  <td>설명가능인공지능</td>
+                  <td>2018-01-26</td>
+              </tr>
           </tbody>
-        </table>
-
+        </table>       
 
         <div class="text-center">
             {% if is_paginated %}
