@@ -27,8 +27,8 @@ urlpatterns = [
     url(r'^research/report/$', views.ReportTextList.as_view(), name='report'),
 
 
-    url(r'^research/demoresource/Amorepacific/$', views.Amorepacific, name='Amorepacific'),
-    url(r'^research/demoresource/HyundaiMobis/$', views.HyundaiMobis, name='HyundaiMobis'),
+    url(r'^research/demoresource/1$', views.Amorepacific, name='amorepacific'),
+    url(r'^research/demoresource/2$', views.HyundaiMobis, name='hyundaiMobis'),
 
     #opensource
     url(r'^opensource/github/$', views.GithubTextlist.as_view(), name='github'),
