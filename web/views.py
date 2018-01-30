@@ -238,7 +238,63 @@ def HyundaiMobis(request):
     for topMenu in topMenus:
         subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
         subMenuDict[topMenu.titleen] = subMenus
-    return render(request, 'web/hyundaimobis.html', {'subMenuDict':getSubMenuDict()})
+    return render(request, 'web/hyundaiMobis.html', {'subMenuDict':getSubMenuDict()})
+
+def hyundaimotor(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+    return render(request, 'web/hyundaimotor.html', {'subMenuDict':getSubMenuDict()})
+
+def koreaelectric(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+    return render(request, 'web/koreaelectric.html', {'subMenuDict':getSubMenuDict()})
+
+def lgchem(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+    return render(request, 'web/lgchem.html', {'subMenuDict':getSubMenuDict()})
+
+def lghnhc(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+    return render(request, 'web/lghnhc.html', {'subMenuDict':getSubMenuDict()})
+
+def samsungcnt(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+    return render(request, 'web/samsungcnt.html', {'subMenuDict':getSubMenuDict()})
+
+def samsungelectronics(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+    return render(request, 'web/samsungelectronics.html', {'subMenuDict':getSubMenuDict()})
+
+def samsungsds(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+    return render(request, 'web/samsungsds.html', {'subMenuDict':getSubMenuDict()})
 
 def Contact(request):
     topMenus = TopMenu.objects.all()

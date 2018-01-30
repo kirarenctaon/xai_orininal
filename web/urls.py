@@ -29,6 +29,13 @@ urlpatterns = [
 
     url(r'^research/demoresource/amorepacific$', views.Amorepacific, name='amorepacific'),
     url(r'^research/demoresource/hyundaiMobis$', views.HyundaiMobis, name='hyundaiMobis'),
+    url(r'^research/demoresource/hyundaimotor$', views.hyundaimotor, name='hyundaimotor'),
+    url(r'^research/demoresource/koreaelectric$', views.koreaelectric, name='koreaelectric'),
+    url(r'^research/demoresource/lgchem$', views.lgchem, name='lgchem'),
+    url(r'^research/demoresource/lghnhc$', views.lghnhc, name='lghnhc'),
+    url(r'^research/demoresource/samsungcnt$', views.samsungcnt, name='samsungcnt'),
+    url(r'^research/demoresource/samsungelectronics$', views.samsungelectronics, name='samsungelectronics'),
+    url(r'^research/demoresource/samsungsds$', views.samsungsds, name='samsungsds'),
 
     #opensource
     url(r'^opensource/github/$', views.GithubTextlist.as_view(), name='github'),
