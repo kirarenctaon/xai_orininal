@@ -32,7 +32,7 @@ urlpatterns = [
 
     #opensource
     url(r'^opensource/github/$', views.GithubTextlist.as_view(), name='github'),
-    url(r'^opensource/relatedproject/1$', views.RelatedProject, name='relatedproject'),
+    url(r'^opensource/relatedproject/1$', views.RelatedProject.as_view(), name='relatedproject'),
     url(r'^opensource/relatedproject/2$', views.RelatedProject2, name='relatedproject2'),
     url(r'^opensource/relatedproject/3$', views.RelatedProject3, name='relatedproject3'),
 
