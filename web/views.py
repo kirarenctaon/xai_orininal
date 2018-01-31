@@ -238,7 +238,7 @@ def hyundaimobis(request):
     for topMenu in topMenus:
         subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
         subMenuDict[topMenu.titleen] = subMenus
-    return render(request, 'web/hyundaimobis.html', {'subMenuDict':getSubMenuDict()})
+    return render(request, 'web/hyundaimobis2.html', {'subMenuDict':getSubMenuDict()})
 
 def hyundaimotor(request):
     topMenus = TopMenu.objects.all()
