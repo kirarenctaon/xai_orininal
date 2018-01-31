@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^research/demoresource/samsungcnt$', views.samsungcnt, name='samsungcnt'),
     url(r'^research/demoresource/samsungelectronics$', views.samsungelectronics, name='samsungelectronics'),
     url(r'^research/demoresource/samsungsds$', views.samsungsds, name='samsungsds'),
+    url(r'^research/demoresource/skhynix$', views.skhynix, name='skhynix'),
 
     #opensource
     url(r'^opensource/github/$', views.GithubTextlist.as_view(), name='github'),

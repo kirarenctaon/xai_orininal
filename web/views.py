@@ -296,6 +296,14 @@ def samsungsds(request):
         subMenuDict[topMenu.titleen] = subMenus
     return render(request, 'web/samsungsds.html', {'subMenuDict':getSubMenuDict()})
 
+def skhynix(request):
+    topMenus = TopMenu.objects.all()
+    subMenuDict = dict()
+    for topMenu in topMenus:
+        subMenus = SubMenu.objects.filter(topmenu_id=topMenu.id)
+        subMenuDict[topMenu.titleen] = subMenus
+    return render(request, 'web/skhynix.html', {'subMenuDict':getSubMenuDict()})
+
 def Contact(request):
     topMenus = TopMenu.objects.all()
     subMenuDict = dict()
