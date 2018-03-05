@@ -27,7 +27,7 @@
             {% for news in news_list %}
               <tr>
                   <td>{{ news.id }}</td>
-                  <td><a href="{% url 'news_detail' pk=news.id%}">{{ news.titleen }}</a></td>
+                  <td><a href="{% url 'news_detail' pk=news.id%}">{{ news.title }}</a></td>
                   <td>{{ news.writer }}</td>
                   <td>{{ news.date }}</td>
               </tr>

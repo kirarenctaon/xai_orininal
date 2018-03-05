@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -45,7 +45,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -58,7 +58,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -71,7 +71,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('careerko', models.TextField()),
@@ -84,7 +84,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -97,7 +97,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -127,7 +127,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -140,7 +140,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -153,7 +153,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -166,7 +166,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -179,7 +179,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -192,7 +192,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
                 ('writer', models.CharField(max_length=45)),
                 ('date', models.DateField()),
                 ('contentko', models.TextField()),
@@ -205,7 +205,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
             ],
         ),
         migrations.CreateModel(
@@ -213,7 +213,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('titleko', models.CharField(max_length=100)),
-                ('titleen', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=100)),
             ],
         ),
         migrations.AddField(

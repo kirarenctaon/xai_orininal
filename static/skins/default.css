@@ -211,7 +211,7 @@ ul.clients li:hover {
     background-color: #68A4C4;
 }
 .nivo-caption, .caption {
-	border-bottom: #68A4C4 5px solid;
+	border-bottom: #DCDCDC 1px solid;
 }
 
 /* footer */

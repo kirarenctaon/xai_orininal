@@ -28,236 +28,181 @@ from django.db import models
 # - Contact(page)
 
 class TopMenu(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
 
     class meta:
-        ordering = ['titleen']
+        ordering = ['title']
 
     def __str__(self):
-        return self.titleen
+        return self.title
 
 class SubMenu(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     topmenu_id = models.ForeignKey('TopMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
+        return self.title
 
 # About
 class Greeting(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     writer = models.CharField(max_length=45)
     date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
+    content= models.TextField()
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
+        return self.title
 
 class Member(models.Model):
-    nameko = models.CharField(max_length=100)
-    nameen = models.CharField(max_length=100)
-    positionko = models.CharField(max_length=100)
-    positionen = models.CharField(max_length=100)
-    departmentko = models.TextField()
-    departmenten = models.TextField()
-    educationko = models.TextField()
-    educationen = models.TextField()
-    careerko = models.TextField()
-    careeren = models.TextField()
+    name = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+    department = models.TextField()
+    education = models.TextField()
+    career = models.TextField()
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
     # IMAGE UPLOAD
     testImage = models.ImageField(upload_to="member", default='noImage')
 
     def __str__(self):
-        return self.nameen
+        return self.name
 
 class Lab(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
-    writer = models.CharField(max_length=45)
-    date = models.DateField()
-    careerko = models.TextField()
-    careeren = models.TextField()
+    name = models.CharField(max_length=100, null=True)
+    professor = models.CharField(max_length=45)
+    research_on = models.TextField()
+    link = models.CharField(max_length=100)
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
+        return self.name
 
 class Project(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     writer = models.CharField(max_length=45)
     date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
+    content = models.TextField()
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
-
-# Research
-class LectureNote(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
-    writer = models.CharField(max_length=45)
-    date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
-    image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
-
-    def __str__(self):
-        return self.titleen
-
-class LectureVideo(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
-    writer = models.CharField(max_length=45)
-    date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
-    link = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
-
-    def __str__(self):
-        return self.titleen
+        return self.title
 
 class DemoResource(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     writer = models.CharField(max_length=45)
     date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
+    content = models.TextField()
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
+        return self.title
 
 class Publication(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     writer = models.CharField(max_length=45)
     date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
+    content = models.TextField()
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
+        return self.title
 
 class Patent(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     writer = models.CharField(max_length=45)
     date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
+    content = models.TextField()
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
-
-class Report(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
-    writer = models.CharField(max_length=45)
-    date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
-    image = models.CharField(max_length=100)
-    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
-
-    def __str__(self):
-        return self.titleen
+        return self.title
 
 # News&Info
 class Notice(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     writer = models.CharField(max_length=45)
     date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
+    contentk = models.TextField()
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
+        return self.title
 
 class News(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     writer = models.CharField(max_length=45)
     date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
+    content = models.TextField()
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
+        return self.title
 
 class Gallery(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     writer = models.CharField(max_length=45)
     date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
+    content = models.TextField()
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
+        return self.title
 
 class Community(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     writer = models.CharField(max_length=45)
     date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
+    content = models.TextField()
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
+        return self.title
 
 class Github(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     writer = models.CharField(max_length=45)
     date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
+    content = models.TextField()
     image = models.CharField(max_length=100)
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
+        return self.title
 
 class RelatedProject(models.Model):
-    titleko = models.CharField(max_length=100)
-    titleen = models.CharField(max_length=100)
-    writer = models.CharField(max_length=45)
-    date = models.DateField()
-    contentko = models.TextField()
-    contenten = models.TextField()
-    image = models.CharField(max_length=100)
+    title = models.CharField(max_length=200, null=True)
+    Institutions = models.CharField(max_length=45)
+    Authors = models.CharField(max_length=200, null=True)
+    Publication_title = models.CharField(max_length=200, null=True)
+    Publication_link = models.CharField(max_length=200, null=True)
+    Sourcecode =models.CharField(max_length=200, null=True)
+    image = models.ImageField(upload_to='RelatedProject/')
     submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.titleen
+        return self.title
+
+class AutoNews(models.Model):
+    company = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
+    writer = models.CharField(max_length=50, default='설명가능인공지능')
+    datetime = models.DateTimeField()
+    content = models.TextField()
+    image_raw = models.ImageField(upload_to='AutomaticNews/%Y/%m/%d')
+    image_predict = models.ImageField(upload_to='AutomaticNews/%Y/%m/%d')
+    report_pdf = models.FileField(upload_to='AutomaticNews/%Y/%m/%d')
+    submenu_id = models.ForeignKey('SubMenu', on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.title

@@ -27,7 +27,7 @@
             {% for community in community_list %}
               <tr>
                   <td>{{ community.id }}</td>
-                  <td><a href="{% url 'community_detail' pk=community.id%}">{{ community.titleen }}</a></td>
+                  <td><a href="{% url 'community_detail' pk=community.id%}">{{ community.title }}</a></td>
                   <td>{{ community.writer }}</td>
                   <td>{{ community.date }}</td>
               </tr>

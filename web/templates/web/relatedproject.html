@@ -15,60 +15,45 @@
 <section id="content">
   <div class="container">
     <div class="row">
-        <div class="post-heading">
-          <h3>The LRP Toolbox for Artificial Neural Networks</h3>
-          <img src="/static/img/related/lrp.png" alt="" />
-        </div>  
-        <br/>
-        <div class="dl-horizontal" style="font-size: 15pt">   
-          <dt> Institutions : </dt><dd>Fraunhofer, Berlin Institute of Tech., Korea University, Singapore Univ. of Tech</dd>
-          <dt>Authors : </dt><dd>S. Lapuschkin, A. Binder, G. Montavon, K-R. Müller, W. Samek</dd>
-          <dt>Publication :</dt><dd><a href="http://jmlr.org/papers/volume17/15-618/15-618.pdf">The LRP Toolbox for Artificial Neural Networks, JMLR, 2016 </a></dd>
-          <dt>Source code : </dt><dd><a href="https://github.com/VigneshSrinivasan10/interprettensor">https://github.com/VigneshSrinivasan10/interprettensor</a></dd>
-      <br/><br/>
-        <div class="post-heading">
-          <h3>Explaining How a Deep Neural Network Trained with End-to-End Learning Steers a Car</h3>
-          <img src="/static/img/related/endtoend.png" alt="" />
-        </div>  
-        <br/>
-        <div class="dl-horizontal" style="font-size: 15pt">   
-          <dt> Institutions : </dt><dd>NVIDIA, New York University, Google</dd>
-          <dt>Authors : </dt><dd>B. Mariusz et. al.</dd>
-          <dt>Publication :</dt><dd><a href="https://arxiv.org/pdf/1704.07911.pdf">Explaining How a Deep Neural Network Trained with End-to-End Learning Steers a Car </a></dd>
-          <dt>Source code : </dt><dd><a href="https://github.com/maxritter/SDC-End-to-end-driving">https://github.com/maxritter/SDC-End-to-end-driving </a></dd>
+
+      {% for project in object_list %}
+      <div class="post-heading">
+          <h3>{{ project.title }}</h3>
+          <img src="/static/upload/{{ project.image }}" alt="" />
         </div>
-      <br/><br/>
-        <div class="post-heading">
-          <h3>The Automatic Statistician</h3>
-          <img src="/static/img/related/automatic.png" alt="" />
-        </div>  
         <br/>
-        <div class="dl-horizontal" style="font-size: 15pt">   
-          <dt>Institutions : </dt><dd> Cambridge, MIT </dd>
-          <dt>Authors : </dt><dd>J. R. Lloyd, D. Duvenaud, R. Grosse, J. B. Tenenbaum and Z. Ghahramani </dd>
-          <dt>Publication :</dt><dd><a href="https://arxiv.org/pdf/1704.07911.pdf"> Automatic Construction and Natural-Language Description of Nonparametric Regression Models, AAAI, 2014 </a></dd>
-          <dt>Source code : </dt><dd><a href="https://github.com/jamesrobertlloyd/gpss-research
-">https://github.com/jamesrobertlloyd/gpss-research </a></dd>
-        </div>  
+        <div class="dl-horizontal" style="font-size: 15pt">
+          <dt>Institutions : </dt><dd>{{ project.Institutions }}</dd>
+          <dt>Authors : </dt><dd>{{ project.Authors }}</dd>
+          <dt>Publication :</dt><dd><a href="{{ project.Publication_title }}">{{ project.Publication_title }} </a></dd>
+          <dt>Source code : </dt><dd><a href="https://github.com/VigneshSrinivasan10/interprettensor">{{ project.Sourcecode }}</a></dd>
       <br/><br/>
-        <div class="post-heading">
-          <h3>Generating Visual Explanations</h3>
-          <img src="/static/img/related/generating.png" alt="" />
-        </div>  
-        <br/>
-        <div class="dl-horizontal" style="font-size: 15pt">   
-          <dt>Institutions : </dt><dd> UC Berkeley, Max Planck Institute for Informatics </dd>
-          <dt>Authors : </dt><dd>L. A. Hendricks, Z. Akata, M. Rohrbach, J. Donahue, B. Schiele, and T. Darrell </dd>
-          <dt>Publication :</dt><dd><a href="https://link.springer.com/chapter/10.1007/978-3-319-46493-0_1"> Generating Visual Explanations, ECCV 2016 </a></dd>
-          <dt>Source code : </dt><dd><a href="https://github.com/LisaAnne/ECCV2016/tree/ECCV2016/examples/ECCV2016">https://github.com/LisaAnne/ECCV2016/tree/ECCV2016/examples/ECCV2016 </a></dd>
-        </div> 
-        <br/><br/>
-        <div id="pagination">
-          <span class="all">Page 1 of 3</span>
-          <span class="current">1</span>
-          <a href="./2" class="inactive">2</a>
-          <a href="/opensource/relatedproject/3"" class="inactive">3</a>
-        </div>
+     {% endfor %}
+
+     <div class="text-center">
+        {% if is_paginated %}
+          <ul class="pagination">
+            {% if news_list.has_previous %}
+              <li><a href="?page={{ news_list.previous_page_number }}">&laquo;</a></li>
+            {% else %}
+              <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+            {% for i in paginator.page_range %}
+              {% if news_list.number == i %}
+                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+              {% else %}
+                <li><a href="?page={{ i }}">{{ i }}</a></li>
+              {% endif %}
+            {% endfor %}
+            {% if news_list.has_next %}
+              <li><a href="?page={{ news_list.next_page_number }}">&raquo;</a></li>
+            {% else %}
+              <li class="disabled"><span>&raquo;</span></li>
+            {% endif %}
+          </ul>
+        {% endif %}
+    </div>
+
     </div>
   </div>
 </section>  
